@@ -2,8 +2,8 @@
 <odoo>
     <template id="brand_promotion_message_remove" inherit_id="web.brand_promotion_message" name="Website customizer" priority="20">
         <xpath expr="//t[contains(@t-out, 'final_message')]" position="replace">
-            <t t-if="request.env.company.show_powered_by">
-                <span t-field="request.env.company.powered_by_html"/>
+            <t t-if="request.env['ir.config_parameter'].sudo().get_param('hide_powered_by_Pro.show_powered_by')">
+                <t t-out="request.env['ir.config_parameter'].sudo().get_param('hide_powered_by_Pro.powered_by_html')"/>
             </t>
         </xpath>
     </template>
