@@ -1,6 +1,7 @@
 
 {
     'name': 'Remove Powered by Odoo from Website Footer , Email Template , Portal & Add Custom Text',
+    'version': '18.0.1.6',
     'category': 'Website',
     'summary': 'Remove or Replace "Powered by Odoo" branding from Website, Portal, and Emails with Custom Text. Whitelabel your Odoo instance.',
     'description': """ 
