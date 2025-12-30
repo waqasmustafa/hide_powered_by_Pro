@@ -1,13 +1,21 @@
 
 {
     'name': 'Remove Powered by Odoo from Website Footer , Email Template , Portal & Add Custom Text',
-    'version': '18.0.1.5',
     'category': 'Website',
-    'summary': 'This Odoo module focuses on removing default branding (remove powered by odoo create a free website ) elements such as "Powered by Odoo" from websites, portals, and footers. It offers a seamless solution for businesses aiming to personalize their Odoo instance and maintain a professional, white-labeled appearance. remove Powered by Odoo - The #1 Open Source eCommerce, hide Powered by Odoo - The #1 Open Source eCommerce, Remove Powered by Odoo,Remove Built with Odoo – The #1 Open Source Business App Suite,Remove Odoo: Open Source ERP & eCommerce Platform,Remove Odoo Website Builder – Build Your Site with Ease,Remove Made with ❤ using Odoo,Remove Odoo eCommerce – Modern, Fast, and Open Source',
+    'summary': 'Remove or Replace "Powered by Odoo" branding from Website, Portal, and Emails with Custom Text. Whitelabel your Odoo instance.',
     'description': """ 
-    removed website powered by odoo
-    Remove Odoo eCommerce – Modern, Fast, and Open Source,
-""",
+    White-label your Odoo instance by removing default branding or replacing it with your own.
+
+    **Key Features:**
+    - **Hide Branding:** Removes "Powered by Odoo" from Website Footer, Portal, and Email Templates.
+    - **Custom Branding:** Option to display your own custom text (HTML supported) instead of Odoo's.
+    - **Easy Configuration:** New settings in General Settings to toggle custom branding and set your text.
+    - **Scope:**
+        - Website Footer
+        - Customer Portal Sidebar
+        - Email Templates (Welcome, Reset Password, Notifications, Digest, etc.)
+        - Backend User Menu (Removes Documentation, Support links)
+    """,
     'author': 'Waqas Mustafa',
     'price': 10.00,
     'currency': "USD",
