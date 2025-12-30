@@ -1,26 +1,18 @@
 # -*- coding: utf-8 -*-
-from odoo import fields, models, api
-
+from odoo import fields, models
 
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
     show_powered_by = fields.Boolean(
         string="Click to show and add your custom branding",
-        config_parameter='hide_powered_by_Pro.show_powered_by',
+        related='company_id.show_powered_by',
+        readonly=False,
         help="Enable to show custom 'Powered by' branding. If disabled, the branding is hidden."
     )
     powered_by_html = fields.Html(
         string="Custom Footer Text (HTML)",
+        related='company_id.powered_by_html',
+        readonly=False,
         help="Custom HTML text to replace 'Powered by Odoo'."
     )
-
-    @api.model
-    def get_values(self):
-        res = super(ResConfigSettings, self).get_values()
-        res['powered_by_html'] = self.env['ir.config_parameter'].sudo().get_param('hide_powered_by_Pro.powered_by_html', default="Powered by MyCompany")
-        return res
-
-    def set_values(self):
-        super(ResConfigSettings, self).set_values()
-        self.env['ir.config_parameter'].sudo().set_param('hide_powered_by_Pro.powered_by_html', self.powered_by_html or "")

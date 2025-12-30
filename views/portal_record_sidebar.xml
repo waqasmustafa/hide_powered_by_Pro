@@ -3,8 +3,8 @@
     <template id="portal_record_sidebar_debranding" inherit_id="portal.portal_record_sidebar" name="Portal DeBranding" priority="20">
         <xpath expr="//div/div[hasclass('text-muted')]" position="replace">
             <div class="o_portal_sidebar_content d-lg-inline-block mb-4 mb-lg-0 p-3 p-lg-0" id="sidebar_content">
-                <t t-if="request.env['ir.config_parameter'].sudo().get_param('hide_powered_by_Pro.show_powered_by')">
-                     <t t-out="request.env['ir.config_parameter'].sudo().get_param('hide_powered_by_Pro.powered_by_html')"/>
+                <t t-if="request.env.company.show_powered_by">
+                     <div t-field="request.env.company.powered_by_html"/>
                 </t>
             </div>
         </xpath>

@@ -157,9 +157,9 @@
     <span id="mail_unfollow">
         <a href="/mail/unfollow" style="text-decoration:none; color:#555555;">Unfollow</a>
     </span>
-    <t t-if="object.env['ir.config_parameter'].sudo().get_param('hide_powered_by_Pro.show_powered_by')">
+    <t t-if="company.show_powered_by">
         <br/>
-        <t t-out="object.env['ir.config_parameter'].sudo().get_param('hide_powered_by_Pro.powered_by_html')"/>
+        <span t-field="company.powered_by_html"/>
     </t>
 </td></tr>
 </table>

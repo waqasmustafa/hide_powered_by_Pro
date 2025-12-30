@@ -463,9 +463,9 @@
                                     <tr>
                                         <div id="footer">
                                             <p style="font-weight: bold;" t-esc="company.name"/>
-                                            <t t-if="object.env['ir.config_parameter'].sudo().get_param('hide_powered_by_Pro.show_powered_by')">
+                                            <t t-if="object.company_id.show_powered_by">
                                                 <br/>
-                                                <t t-out="object.env['ir.config_parameter'].sudo().get_param('hide_powered_by_Pro.powered_by_html')"/>
+                                                <span t-field="object.company_id.powered_by_html"/>
                                             </t>
                                         </div>
                                     </tr>
