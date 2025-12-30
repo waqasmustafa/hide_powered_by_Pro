@@ -12,6 +12,15 @@ class ResConfigSettings(models.TransientModel):
     )
     powered_by_html = fields.Html(
         string="Custom Footer Text (HTML)",
-        config_parameter='hide_powered_by_Pro.powered_by_html',
         help="Custom HTML text to replace 'Powered by Odoo'."
     )
+
+    @api.model
+    def get_values(self):
+        res = super(ResConfigSettings, self).get_values()
+        res['powered_by_html'] = self.env['ir.config_parameter'].sudo().get_param('hide_powered_by_Pro.powered_by_html', default="Powered by MyCompany")
+        return res
+
+    def set_values(self):
+        super(ResConfigSettings, self).set_values()
+        self.env['ir.config_parameter'].sudo().set_param('hide_powered_by_Pro.powered_by_html', self.powered_by_html or "")
